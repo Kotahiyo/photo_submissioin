@@ -1,1 +1,1 @@
-# photo_submissioin
+# photo_submission
