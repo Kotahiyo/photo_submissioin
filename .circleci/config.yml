@@ -19,8 +19,8 @@ jobs:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-      - run: bundle config set path 'vendor/bundle'
-      - run: yarn install
+      # - run: bundle config set path 'vendor/bundle'
+      # - run: yarn install
       - save_cache:
           paths:
             - ./vendor/bundle
@@ -48,8 +48,8 @@ jobs:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-      - run: bundle config set path 'vendor/bundle'
-      - run: yarn install
+      # - run: bundle config set path 'vendor/bundle'
+      # - run: yarn install
       - save_cache:
           paths:
             - ./vendor/bundle
