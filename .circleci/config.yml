@@ -21,7 +21,7 @@ jobs:
             - v1-dependencies-
       # - run: bundle config set path 'vendor/bundle'
       - run:
-          name: bundle install の実行
+          name: run bundle install
           command: bundle install
       - save_cache:
           paths:
@@ -29,7 +29,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
       # Rubocop
       - run:
-          name: Rubocop の実行
+          name: Rubocop
           command: bundle exec rubocop
 
   rspec:
@@ -53,8 +53,8 @@ jobs:
             - v1-dependencies-
       # - run: bundle config set path 'vendor/bundle'
       - run:
-        name: bundle install の実行
-        command: bundle install
+          name: run bundle install
+          command: bundle install
       - save_cache:
           paths:
             - ./vendor/bundle
@@ -63,7 +63,7 @@ jobs:
       - run: bundle exec rake db:schema:load
       # Rspec
       - run:
-          name: Rspec の実行
+          name: Rspec
           command: bundle exec rspec
 
 workflows:
