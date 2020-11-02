@@ -22,7 +22,7 @@ jobs:
       # - run: bundle config set path 'vendor/bundle'
       - run:
           name: run bundle install
-          command: bundle install
+          command: bundle install --path=vendor/bundle
       - save_cache:
           paths:
             - ./vendor/bundle
@@ -54,13 +54,17 @@ jobs:
       # - run: bundle config set path 'vendor/bundle'
       - run:
           name: run bundle install
-          command: bundle install
+          command: bundle install --path=vendor/bundle
       - save_cache:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run:
+          name: run rake db:create
+          command: bundle exec rake db:create
+      - run:
+          name: run rake db:schema:load
+          command: bundle exec rake db:schema:load
       # Rspec
       - run:
           name: Rspec
