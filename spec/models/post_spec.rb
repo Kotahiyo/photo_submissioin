@@ -20,5 +20,18 @@
 require "rails_helper"
 
 RSpec.describe Post, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "指定のカラム title を入力したら" do
+    let(:post) { build(:post) }
+    it "投稿ができる" do
+      expect(post).to be_valid
+    end
+  end
+
+  context "指定のカラム title を入力しないと" do
+    let(:post) { build(:post, title: nil) }
+    it "エラーになる" do
+      expect(post).to be_invalid
+      expect(post.errors.messages[:title]).to eq ["can't be blank"]
+    end
+  end
 end
