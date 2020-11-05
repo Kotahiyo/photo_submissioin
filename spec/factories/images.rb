@@ -3,6 +3,7 @@
 # Table name: images
 #
 #  id         :bigint           not null, primary key
+#  images     :json
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  post_id    :bigint           not null
@@ -17,6 +18,7 @@
 #
 FactoryBot.define do
   factory :image do
-    post { nil }
+    images { [Rack::Test::UploadedFile.new(Rails.root.join("spec/fixtures/test_2.jpg"))] }
+    post
   end
 end
