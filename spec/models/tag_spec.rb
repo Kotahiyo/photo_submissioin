@@ -24,5 +24,4 @@ RSpec.describe Tag, type: :model do
       expect(tag.errors.messages[:name]).to eq ["can't be blank"]
     end
   end
-
 end
