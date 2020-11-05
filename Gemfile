@@ -27,6 +27,7 @@ gem "jbuilder", "~> 2.7"
 gem "active_model_serializers", "~> 0.10.0"
 gem "carrierwave", "~> 2.0"
 gem "devise_token_auth"
+gem "mini_magick"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
