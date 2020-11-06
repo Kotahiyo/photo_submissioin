@@ -21,5 +21,10 @@
 require "rails_helper"
 
 RSpec.describe PostTag, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "post 作成。tag 登録すると" do
+    let(:post_tag) { create(:post_tag) }
+    it "post と tag のリレーションが設定される" do
+      expect(post_tag).to be_valid
+    end
+  end
 end

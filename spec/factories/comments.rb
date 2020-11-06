@@ -21,7 +21,8 @@
 #
 FactoryBot.define do
   factory :comment do
-    body { "MyText" }
-    post { nil }
+    body { Faker::Lorem.paragraph(sentence_count: 4) }
+    post
+    user
   end
 end
