@@ -74,3 +74,6 @@ RSpec/ReturnFromStub:
 
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/EmptyLineAfterSubject:
+  Enabled: false
