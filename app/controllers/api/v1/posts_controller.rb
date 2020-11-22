@@ -11,6 +11,12 @@ module Api::V1
       render json: post
     end
 
+    def update
+      post = current_user.posts.find(params[:id])
+      post.update!(post_params)
+      render json: post
+    end
+
     private
 
       def post_params

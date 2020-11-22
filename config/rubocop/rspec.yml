@@ -77,3 +77,6 @@ RSpec/MultipleExpectations:
 
 RSpec/EmptyLineAfterSubject:
   Enabled: false
+
+RSpec/LetSetup:
+  Enabled: false
