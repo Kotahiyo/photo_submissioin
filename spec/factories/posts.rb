@@ -22,5 +22,9 @@ FactoryBot.define do
     title { Faker::Lorem.sentence }
     body { Faker::Lorem.sentence }
     user
+
+    after(:build) do |built_post|
+      built_post.images << FactoryBot.build(:image, post: built_post)
+    end
   end
 end
