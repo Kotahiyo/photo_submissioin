@@ -15,6 +15,26 @@ RSpec.describe "Api::V1::Posts", type: :request do
       expect(response).to have_http_status(:ok)
       expect(res.map {|d| d["id"] }).to eq [post1.id, post3.id, post2.id]
       expect(res[0]["user"].keys).to eq ["id", "email", "name"]
+      expect(res[0]["images"][0].keys).to eq ["id", "images"]
+    end
+  end
+
+  describe "GET /posts/:id" do
+    subject { get(api_v1_post_path(post_id)) }
+    context "指定した ID の投稿が存在する時" do
+      let(:post) { create(:post) }
+      let(:post_id) { post.id }
+      it "投稿の一覧が表示できる" do
+        expect { subject }.to change { Image.count }.by(1)
+        res = JSON.parse(response.body)
+        expect(res["id"]).to eq post.id
+        expect(res["title"]).to eq post.title
+        expect(res["body"]).to eq post.body
+        expect(res["updated_at"]).to be_present
+        expect(res["user"]["id"]).to eq post.user_id
+        expect(res["user"].keys).to eq ["id", "email", "name"]
+        expect(response).to have_http_status(:ok)
+      end
     end
   end
 

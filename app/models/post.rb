@@ -23,5 +23,9 @@ class Post < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   has_many :images, dependent: :destroy
 
+  # image モデルとアソシエーションを組んで、同時に保存できるよう設定
+  validates_associated :images
+  accepts_nested_attributes_for :images, allow_destroy: true
+
   validates :title, presence: true
 end

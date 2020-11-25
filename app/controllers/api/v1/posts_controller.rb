@@ -6,6 +6,11 @@ module Api::V1
       render json: posts, each_serializer: Api::V1::PostPreviewSerializer
     end
 
+    def show
+      post = Post.find(params[:id])
+      render json: post, serializer: Api::V1::PostPreviewSerializer
+    end
+
     def create
       post = current_user.posts.create!(post_params)
       render json: post
@@ -25,7 +30,7 @@ module Api::V1
     private
 
       def post_params
-        params.require(:post).permit(:title, :body)
+        params.require(:post).permit(:title, :body, images_attributes: [:id, :images])
       end
   end
 end
