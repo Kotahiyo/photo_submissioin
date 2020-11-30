@@ -24,7 +24,7 @@ RSpec.describe "Api::V1::Posts", type: :request do
     context "指定した ID の投稿が存在する時" do
       let(:post) { create(:post) }
       let(:post_id) { post.id }
-      it "投稿の一覧が表示できる" do
+      it "投稿の詳細が表示できる" do
         expect { subject }.to change { Image.count }.by(1)
         res = JSON.parse(response.body)
         expect(res["id"]).to eq post.id
