@@ -1,5 +1,6 @@
 module Api::V1
   class PostsController < BaseApiController
+    before_action :authenticate_user!, only: [:create, :update, :destroy]
     def index
       posts = Post.order(updated_at: :desc)
 

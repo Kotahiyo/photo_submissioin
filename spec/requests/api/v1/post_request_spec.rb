@@ -39,11 +39,11 @@ RSpec.describe "Api::V1::Posts", type: :request do
   end
 
   describe "Post /post" do
-    subject { post(api_v1_posts_path, params: params) }
+    subject { post(api_v1_posts_path, params: params, headers: headers) }
 
     let(:params) { { post: attributes_for(:post) } }
     let(:current_user) { create(:user) }
-    before { allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user) }
+    let(:headers) { current_user.create_new_auth_token }
 
     context "適切なパラメータを渡した時 " do
       it "記事が作成される。" do
@@ -57,11 +57,11 @@ RSpec.describe "Api::V1::Posts", type: :request do
   end
 
   describe "Patch /posts/:id" do
-    subject { patch(api_v1_post_path(post.id), params: params) }
+    subject { patch(api_v1_post_path(post.id), params: params, headers: headers) }
 
     let(:params) { { post: attributes_for(:post) } }
     let(:current_user) { create(:user) }
-    before { allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user) }
+    let(:headers) { current_user.create_new_auth_token }
 
     context "自分の作成した記事を更新しようとした時" do
       let(:post) { create(:post, user: current_user) }
@@ -83,11 +83,11 @@ RSpec.describe "Api::V1::Posts", type: :request do
   end
 
   describe "Delete /posts/id" do
-    subject { delete(api_v1_post_path(post_id)) }
+    subject { delete(api_v1_post_path(post_id), headers: headers) }
 
     let(:current_user) { create(:user) }
     let(:post_id) { post.id }
-    before { allow_any_instance_of(Api::V1::BaseApiController).to receive(:current_user).and_return(current_user) }
+    let(:headers) { current_user.create_new_auth_token }
 
     context "自分の記事を削除しようとする時" do
       let!(:post) { create(:post, user: current_user) }

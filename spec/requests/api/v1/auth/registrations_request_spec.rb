@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Api::V1::Posts", type: :request do
+RSpec.describe "Api::V1::Auth::Registrations", type: :request do
   describe "Post /v1/auth" do
     subject { post(api_v1_user_registration_path, params: params) }
 
