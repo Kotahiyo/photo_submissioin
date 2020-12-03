@@ -1,0 +1,30 @@
+.home {
+  width: 100%;
+  height: 1000px;
+  background-image: url("../../images/home.webp");
+  background-size: cover;
+  .h-container {
+    width: 80%;
+    margin: 0 auto;
+    color: #DDDDDD;
+    text-align: center;
+    .h-main {
+      width: 100%;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .h-title {
+        font-size: 5.5rem;
+        padding: 60px;
+      }
+      .h-sub-title {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.h-title {
+
+}
