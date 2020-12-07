@@ -1,7 +1,8 @@
 .home {
   width: 100%;
   height: 1000px;
-  background-image: url("../../images/home.webp");
+  // 表示されない
+  background-image: url("../../images/home.jpeg");
   background-size: cover;
   .h-container {
     width: 80%;
@@ -10,7 +11,7 @@
     text-align: center;
     .h-main {
       width: 100%;
-      height: 600px;
+      height: 400px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -25,6 +26,21 @@
     }
   }
 }
-.h-title {
-
+.sign-log-wrap{
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  .mov-b {
+    margin: 0 60px;
+    .mov-button {
+      padding: 30px;
+      color: black;
+      border: #fff solid 2px;
+      background-color: #EEEEEE;
+      border-radius: 5px;
+      font-size: 3rem;
+      opacity: 0.8;
+    }
+  }
 }

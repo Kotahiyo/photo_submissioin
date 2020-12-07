@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="../../assets/stylesheets/style.css">
   <title>Photo Submittion</title>
 </head>
 <body>
@@ -19,6 +18,20 @@
             <h2 class="h-sub-title">
               あなたの大切な人の写真を管理します
             </h2>
+          </div>
+        </div>
+
+        <div class="sign-log-wrap">
+          <div class="mov-b">
+          <%= link_to “/api/v1/auth/sign_in/new”, class: “mov-button” %>
+            <%# <a href="#" class="mov-button">
+              Sign Up
+            </a> %>
+          </div>
+          <div class="mov-b">
+            <a href="#" class="mov-button">
+              Log In
+            </a>
           </div>
         </div>
       </div>
