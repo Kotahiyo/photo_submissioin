@@ -1,7 +1,7 @@
 .home {
   width: 100%;
   height: 1000px;
-  background-image: url("../../images/home.webp");
+  background-image: url("../../images/home.jpeg");
   background-size: cover;
 }
 
@@ -14,7 +14,7 @@
 
 .home .h-container .h-main {
   width: 100%;
-  height: 600px;
+  height: 400px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,5 +37,30 @@
 
 .home .h-container .h-main .h-sub-title {
   font-size: 2rem;
+}
+
+.sign-log-wrap {
+  width: 100%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sign-log-wrap .mov-b {
+  margin: 0 60px;
+}
+
+.sign-log-wrap .mov-b .mov-button {
+  padding: 30px;
+  color: black;
+  border: #fff solid 2px;
+  background-color: #EEEEEE;
+  border-radius: 5px;
+  font-size: 3rem;
+  opacity: 0.8;
 }
 /*# sourceMappingURL=home.css.map */
